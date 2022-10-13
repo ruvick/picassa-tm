@@ -10,24 +10,24 @@ jQuery(document).ready(function ($) {
   $('.mobile-menu a').click(function () {
     $('.mob-menu').css('bottom', '140%');
   });
-  jQuery(".dialog-cb-button__decstop a").click(function(e){
-	e.preventDefault();	
-    headerwin = jQuery(this).data("headerwin"); 
+  jQuery(".dialog-cb-button__decstop a").click(function (e) {
+    e.preventDefault();
+    headerwin = jQuery(this).data("headerwin");
     btn = jQuery(this).data('btn');
-    
+
     jQuery('#phone-modal').arcticmodal();
-  
+
   });
-  
-  jQuery(".zwinopen").click(function(e){
-	e.preventDefault();	
-    headerwin = jQuery(this).data("headerwin"); 
+
+  jQuery(".zwinopen").click(function (e) {
+    e.preventDefault();
+    headerwin = jQuery(this).data("headerwin");
     btn = jQuery(this).data('btn');
-    
+
     jQuery('#phone-modal').arcticmodal();
-  
+
   });
-  
+
   var inputmask_96e76a5f = {
     "mask": "+7(999)999-99-99"
   };
@@ -39,7 +39,7 @@ jQuery(document).ready(function ($) {
     var name = jQuery(this).find("input[name=name]").val();
     var tel = jQuery(this).find("input[name=tel]").val();
     var mail = jQuery(this).find("input[name=email]").val();
-	
+
 
     if ((tel == "") || (tel.indexOf("_") > 0)) {
       jQuery(this).find("input[name=tel]").css("background-color", "red");
@@ -50,15 +50,16 @@ jQuery(document).ready(function ($) {
       url: "./sender/send.php", //путь до php фаила отправителя
       data: form_data,
       success: function () {
-        ym(65991169,'reachGoal','form');
-		jQuery('#messgeModal #lineMsg').html("Ваша заявка принята. Мы свяжемся с Вами в ближайшее время.");
-        jQuery('#messgeModal').arcticmodal();
-		
-	  }
+        ym(65991169, 'reachGoal', 'form');
+        location.href = "/thanks.html"
+        // jQuery('#messgeModal #lineMsg').html("Ваша заявка принята. Мы свяжемся с Вами в ближайшее время.");
+        //     jQuery('#messgeModal').arcticmodal();  
+
+      }
     });
   });
-  
-  
+
+
   var $page = $('html, body');
   $('header a[href*="#"], footer  a[href*="#"], .mobile-menu a[href*="#"]').click(function () {
     $page.animate({
